@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Calculator App</title>
+    <style type="text/css">
+      #container
+      {
+        background-color: gray;
+        width: 30%;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+  <div id="container">
+      <label for="txtNum1">Number1:</label><br/>
+      <input type="text" id="txtNum1" value="0"><br/>
+
+      <label for="txtNum2">Number2:</label><br/>
+      <input type="text" id="txtNum2" value="0"><br/>
+
+      <label for="txtSum">Sum:</label><br/>
+      <input type="text" id="txtSum" value="0" disabled><br/></br>
+
+      <input type="button" value="Add" onclick="Add()">
+      <input type="button" value="Undo" onclick="Undo()">
+
+  </div>
+  <script type="text/javascript">
+    function Undo()
+    {
+      document.getElementById("txtNum1").value ="0";
+      document.getElementById("txtNum2").value ="0";
+      document.getElementById("txtSum").value ="0";
+
+    }
+    function Add()
+    {
+      var num1 = Number(document.getElementById("txtNum1").value); 
+      var num2 = Number(document.getElementById("txtNum2").value); 
+      var sum  = num1 + num2;
+      // alert(sum);
+      // console.log(sum)
+      document.getElementById("txtSum").value = String(sum);
+
+    }
+  
+  </script>
+  
+  </body>
+</html>
